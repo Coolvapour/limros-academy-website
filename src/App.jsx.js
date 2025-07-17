@@ -146,7 +146,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <p>&copy; {new Date().getFullYear()} LIMROS ACADEMY TURBO. IN GOD WE EXEL!</p>
         <p className="mt-2 text-sm">Designed with <span className="text-red-500">&hearts;</span> for education.</p>
-        <p className="mt-2 text-sm">Designed by Software engineer jeruto!.</p>
+        <p className="mt-2 text-sm">Designed by Software engineer Jeruto.</p>
       </div>
     </footer>
   );
@@ -564,9 +564,9 @@ const GalleryEventsPage = () => {
 // Staff Page Component (corrected import for Headset if needed)
 const StaffPage = () => {
   const staffMembers = [
-    { name: "Mr. Gideon Lagat", title: "Head Teacher", photo: "/images/staff_gideon_lagat.jpg", bio: "Mr. Lagat has over 15 years of experience in educational leadership. He is dedicated to fostering a positive learning environment and academic excellence.", icon: Briefcase },
-    { name: "Mr. Fredrrick Olang'", title: "Deputy Head Teacher", photo: "/images/staff_fredrrick_olang.jpg", bio: "Mr. Olang' is passionate about curriculum development and student welfare. He plays a key role in implementing innovative teaching strategies.", icon: Briefcase },
-    { name: "Ms. Sharon Kiptoo", title: "Guidance Counselor", photo: "/images/staff_sharon_kiptoo.jpg", bio: "Ms. Kiptoo provides invaluable support to students, helping them navigate academic and personal challenges to achieve their full potential.", icon: Headset }, // Used Headset icon
+    { name: "Mr. Charles Yagan", title: "Head Teacher", photo: "/images/staff_gideon_lagat.jpg", bio: "Mr. Yagan has over 15 years of experience in educational leadership. He is dedicated to fostering a positive learning environment and academic excellence.", icon: Briefcase },
+    { name: "Mr Brian Oyugi", title: "Deputy Head Teacher", photo: "/images/staff_fredrrick_olang.jpg", bio: "Mr. Oyugi is passionate about curriculum development and student welfare. He plays a key role in implementing innovative teaching strategies.", icon: Briefcase },
+    { name: "Mr. Wilson Mutoro", title: "Guidance Counselor", photo: "/images/staff_sharon_kiptoo.jpg", bio: "Mr. Mutoro provides invaluable support to students, helping them navigate academic and personal challenges to achieve their full potential.", icon: Headset }, // Used Headset icon
   ];
 
   return (
@@ -665,6 +665,9 @@ const StudentLifePage = () => {
 
 // Contact Page Component
 const ContactPage = () => {
+  const phoneNumber = '+254722893818'; // Store phone number for easy reuse
+  const whatsappLink = `https://wa.me/${phoneNumber.replace(/\s/g, '')}?text=Hello%20Limros%20Academy%2C%20I%20have%20a%20question.`;
+
   return (
     <section
       className="p-8 rounded-lg shadow-md mb-8 relative overflow-hidden"
@@ -688,7 +691,14 @@ const ContactPage = () => {
             </p>
             <p className="text-gray-700 flex items-center mb-2">
               <Phone size={20} className="mr-3 text-green-700" /> {/* Changed icon color */}
-              <span>+254 722 893 818</span> {/* Updated phone number */}
+              {/* Call Link */}
+              <a href={`tel:${phoneNumber}`} className="text-blue-600 hover:underline mr-4">
+                {phoneNumber}
+              </a>
+              {/* WhatsApp Link */}
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+                <MessageSquare size={20} className="inline-block mr-1" /> WhatsApp
+              </a>
             </p>
             <p className="text-gray-700 flex items-center mb-2">
               <Mail size={20} className="mr-3 text-green-700" /> {/* Changed icon color */}
